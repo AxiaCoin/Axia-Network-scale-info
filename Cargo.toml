@@ -1,0 +1,50 @@
+[package]
+name = "scale-info"
+version = "1.0.0"
+authors = ["AXIA Technologies <sankar.boro@zeeve.io>"]
+edition = "2021"
+
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/axia-tech/scale-info"
+documentation = "https://docs.rs/scale-info"
+homepage = "https://www.axiacoin.network/"
+description = "Info about SCALE encodable Rust types"
+categories = ["no-std", "encoding"]
+include = ["Cargo.toml", "src/**/*.rs", "README.md", "LICENSE"]
+
+[dependencies]
+bitvec = { version = "0.20.1", default-features = false, features = ["alloc"], optional = true }
+cfg-if = "1.0"
+scale-info-derive = { version = "1.0.0", path = "derive", default-features = false, optional = true }
+serde = { version = "1", default-features = false, optional = true, features = ["derive", "alloc"] }
+derive_more = { version = "0.99.1", default-features = false, features = ["from"] }
+scale = { package = "axc-scale-codec", default-features = false, features = ["derive"] }
+
+[features]
+default = ["std"]
+std = [
+    "bitvec/std",
+    "scale/std",
+]
+derive = [
+    "scale-info-derive"
+]
+# Include rustdoc strings in the type metadata.
+docs = [
+    "scale-info-derive/docs"
+]
+# enables decoding and deserialization of portable scale-info type metadata
+decode = [
+    "scale/full"
+]
+# enables type information for bitvec types, matching the name of the axc-scale-codec feature
+bit-vec = [
+    "bitvec"
+]
+
+[workspace]
+members = [
+    "derive",
+    "test_suite",
+]

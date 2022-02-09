@@ -1,0 +1,60 @@
+name: Rust
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: setup
+      uses: actions-rs/toolchain@v1
+      with:
+          profile: minimal
+          toolchain: nightly
+          override: true
+          components: rustfmt, clippy
+          target: wasm32-unknown-unknown
+
+    - name: fmt
+      run: |
+        cargo fmt --version
+        cargo fmt --all -- --check
+
+    - name: clippy
+      run: |
+        cargo clippy --version
+        cargo clippy --all -- -D warnings
+
+    - name: check-all-features
+      run: |
+        cargo check --all --all-features
+
+    - name: check-features
+      run: |
+        cargo check --no-default-features --features bit-vec
+        cargo check --no-default-features --features docs
+        cargo check --no-default-features --features serde
+        cargo check --no-default-features --features serde,decode
+
+    - name: build
+      run: |
+        cargo --version --verbose
+        cargo build --all
+        cargo build --all --no-default-features
+
+    - name: test
+      run: |
+        cargo test --all --all-features
+
+    - name: test no-std
+      run: |
+        cd ./test_suite/derive_tests_no_std
+        cargo build --no-default-features

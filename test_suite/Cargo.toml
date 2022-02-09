@@ -1,0 +1,20 @@
+[package]
+name = "scale-info-test-suite"
+version = "0.0.0"
+authors = ["AXIA Technologies <sankar.boro@zeeve.io>", "Centrality Developers <support@centrality.ai>"]
+edition = "2021"
+publish = false
+
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+scale-info = { path = "..", features = ["derive", "serde", "decode"] }
+
+scale = { package = "axc-scale-codec", version = "2.3.1", default-features = false, features = ["derive"] }
+serde = "1.0"
+serde_json = "1.0"
+pretty_assertions = "0.6.1"
+trybuild = "1"
+rustversion = "1"

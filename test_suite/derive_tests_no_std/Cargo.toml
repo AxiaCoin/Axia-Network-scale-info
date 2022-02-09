@@ -1,0 +1,18 @@
+[package]
+name = "scale-info-derive-tests-no-std"
+version = "0.0.0"
+authors = ["AXIA Technologies <sankar.boro@zeeve.io>", "Centrality Developers <support@centrality.ai>"]
+edition = "2021"
+publish = false
+
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+scale-info = { path = "../..", default-features = false, features = ["derive"] }
+scale = { package = "axc-scale-codec", branch = "2.3.1", features = ["full"] }
+
+libc = { version = "0.2", default-features = false }
+
+[workspace]

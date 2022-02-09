@@ -1,0 +1,26 @@
+[package]
+name = "scale-info-derive"
+version = "1.0.0"
+authors = ["AXIA Technologies <sankar.boro@zeeve.io>", "Centrality Developers <support@centrality.ai>"]
+edition = "2021"
+
+license = "Apache-2.0"
+repository = "https://github.com/axia-tech/scale-info"
+documentation = "https://docs.rs/scale-info"
+homepage = "https://www.axiacoin.network/"
+description = "Derive type info for SCALE encodable types"
+categories = ["no-std", "encoding"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+quote = "1.0"
+syn = { version = "1.0", features = ["derive", "visit", "visit-mut", "extra-traits"] }
+proc-macro2 = "1.0"
+proc-macro-crate = "1"
+
+[features]
+default = ["docs"]
+# Include code docs in type metadata.
+docs = []
