@@ -44,15 +44,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.9.0] - 2021-06-30
 ### Changed
-- Reverted axc-scale-codec prerelease requirement from [0.8.0-rc.1]
-- Reexport axc-scale-codec for derive [(#106)](https://github.com/axia-tech/scale-info/pull/106)
+- Reverted axia-scale-codec prerelease requirement from [0.8.0-rc.1]
+- Reexport axia-scale-codec for derive [(#106)](https://github.com/axia-tech/scale-info/pull/106)
 
 ### Added
 - Add `skip_type_params` attribute [(#96)](https://github.com/axia-tech/scale-info/pull/96)
 
 ## [0.8.0-rc.1] - 2021-06-29
 ### Changed
-- Bump axc-scale-codec to 2.2.0-rc.2 [(#102)](https://github.com/axia-tech/scale-info/pull/102)
+- Bump axia-scale-codec to 2.2.0-rc.2 [(#102)](https://github.com/axia-tech/scale-info/pull/102)
 
 ## [0.7.0] - 2021-06-29
 ### Added
@@ -106,7 +106,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Consolidate common prelude for std and no_std and usage - [(#33)](https://github.com/axia-tech/scale-info/pull/33)
 - Add informational field type name - [(#30)](https://github.com/axia-tech/scale-info/pull/30)
 - Unify transparent wrapper types e.g. references - [(#26)](https://github.com/axia-tech/scale-info/pull/26)
-- Bump `axc-scale-codec` from 1.0 to 2.0 [(#55)](https://github.com/axia-tech/scale-info/pull/55)
+- Bump `axia-scale-codec` from 1.0 to 2.0 [(#55)](https://github.com/axia-tech/scale-info/pull/55)
 
 ## Fixed
 - Fix type name scrubbing to handle nested tuples - [(#47)](https://github.com/axia-tech/scale-info/pull/47)

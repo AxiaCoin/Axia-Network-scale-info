@@ -157,7 +157,7 @@ pub struct Variant<T: Form = MetaForm> {
         serde(skip_serializing_if = "Vec::is_empty", default)
     )]
     fields: Vec<Field<T>>,
-    /// Index of the variant, used in `axc-scale-codec`.
+    /// Index of the variant, used in `axia-scale-codec`.
     ///
     /// The value of this will be, in order of precedence:
     ///     1. The explicit index defined by a `#[codec(index = N)]` attribute.

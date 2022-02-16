@@ -14,7 +14,7 @@
 
 //! Utility methods to work with `SCALE` attributes relevant for the `TypeInfo` derive..
 //!
-//! NOTE: The code here is copied verbatim from `axc-scale-codec-derive`.
+//! NOTE: The code here is copied verbatim from `axia-scale-codec-derive`.
 
 use proc_macro2::TokenStream;
 use quote::quote;
@@ -57,7 +57,7 @@ pub fn maybe_index(variant: &Variant) -> Option<u8> {
                 if let Lit::Int(ref v) = nv.lit {
                     let byte = v
                         .base10_parse::<u8>()
-                        .expect("Internal error. `#[codec(index = …)]` attribute syntax must be checked in `axc-scale-codec`. This is a bug.");
+                        .expect("Internal error. `#[codec(index = …)]` attribute syntax must be checked in `axia-scale-codec`. This is a bug.");
                     return Some(byte)
                 }
             }

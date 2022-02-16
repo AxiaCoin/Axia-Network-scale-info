@@ -6,7 +6,7 @@
 [b2]: https://crates.io/crates/scale-info
 
 A library to describe Rust types, geared towards providing info about the structure of [SCALE
-](https://github.com/axia-tech/axc-scale-codec) encodable types.
+](https://github.com/axia-tech/axia-scale-codec) encodable types.
 
 The definitions provide third party tools (e.g. a UI client) with information about how they
 are able to decode types agnostic of language.
@@ -213,7 +213,7 @@ registered types are utilized to allow consumers to resolve the types.
 The type registry can be encoded as:
 
 - JSON (with the "serde" feature enabled).
-- SCALE itself (using `axc-scale-codec`).
+- SCALE itself (using `axia-scale-codec`).
 
 ## Features
 
